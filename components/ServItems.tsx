@@ -1,0 +1,23 @@
+import Link from "next/link";
+import React from "react";
+type ServItemsProp = {
+  title: string;
+  description: string;
+  link: string;
+};
+const ServItems = ({ description, link, title }: ServItemsProp) => {
+  return (
+    <li className="flex flex-col items-start gap-4 shadow-lg bg-slate-600 p-3">
+      <span>
+        <h4 className="text-lg uppercase text-white mb-2">{title}</h4>
+        <small className="text-neutral-400 capitalize">{description}</small>
+      </span>
+      <Link href={link} className="px-3 py-1 uppercase text-cyan-400">
+        order now
+        <i className="fi fi-sr-angle-right leading-3 text-xs"></i>
+      </Link>
+    </li>
+  );
+};
+
+export default ServItems;
