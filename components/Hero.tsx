@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import profileCover from "../assets/profile-cover.jpg";
 
@@ -22,12 +23,18 @@ const Hero = () => {
             Experiance with development by React.JS Library
           </code>
           <div className="flex items-center justify-center gap-3 mb-3">
-            <button type="button" className="btn px-10">
+            <Link
+              href="https://www.upwork.com/freelancers/~01b20a553681d081b1"
+              className="btn px-10"
+            >
               hire me
-            </button>
-            <button type="button" className="btn-outline">
+            </Link>
+            <Link
+              href="https://drive.google.com/file/d/1dc4UP7cgg7GHZaVr83Li9GBF8t5Bv2SK/view"
+              className="btn-outline"
+            >
               download resume
-            </button>
+            </Link>
           </div>
         </div>
       </div>

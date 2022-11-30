@@ -90,19 +90,25 @@
     width: 0px;
   }
   .feeds-list {
-    @apply relative w-full flex flex-col justify-center items-center gap-3 mt-6 ml-3 after:absolute after:left-0 after:-top-3 after:w-[2px] after:h-full after:bg-slate-100;
+    @apply relative w-full flex flex-col justify-center items-end lg:items-center gap-3 mt-6 ml-3 after:absolute after:left-0 after:-top-3 after:w-[2px] after:h-full after:bg-slate-100;
   }
   .feed-box {
-    @apply flex items-start flex-col lg:flex-row justify-start min-h-[180px] lg:h-[145px];
+    @apply relative flex items-start flex-col lg:flex-row justify-start w-5/6 lg:w-full lg:min-h-max lg:h-[170px];
   }
   .indicator {
-    @apply relative z-10 grid place-items-center border-b w-1/4 lg:w-1/5 h-1/2 text-sm py-2 px-4 text-white after:absolute after:bottom-0 after:translate-y-1/2 after:-translate-x-1/4 after:-left-1 after:bg-cyan-600 after:w-5 after:h-5 after:rounded-full;
+    @apply relative z-10 grid place-items-center border-b w-full lg:w-1/5 h-1/2 text-sm py-2 px-4 text-white after:absolute after:bottom-0 after:translate-y-1/2 after:-translate-x-1/4 after:-left-1 after:bg-cyan-600 after:w-5 after:h-5 after:rounded-full;
+  }
+  .feed-wrapper {
+    @apply flex flex-col lg:flex-wrap w-full h-full bg-gray-600 border lg:border-r-0 border-slate-500 shadow-lg;
   }
   .feed-content {
-    @apply w-4/5 lg:w-[60%] min-h-[inherit] flex flex-col items-start justify-start bg-slate-600 divide-y divide-slate-500 overflow-hidden rounded-tl rounded-bl shadow-md;
+    @apply flex flex-col items-start justify-start w-full lg:w-3/4 min-h-full divide-y divide-slate-400 overflow-hidden;
   }
   .feed-image {
-    @apply grid place-items-center w-4/5 lg:w-1/5 min-h-[inherit] overflow-hidden rounded-tr rounded-br shadow-md;
+    @apply grid place-items-center w-full lg:w-1/4 min-h-full overflow-hidden lg:border-l border-slate-500;
+  }
+  .discripe {
+    @apply px-4 py-1.5 w-full h-4/5 flex justify-start items-center text-white;
   }
 }
 @tailwind utilities;
