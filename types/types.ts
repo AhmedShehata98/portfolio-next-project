@@ -10,3 +10,9 @@ export interface IProjectsList {
 export type PortfolioProps = {
   projects: IProjectsList[];
 };
+
+export interface IContactFormData {
+  name: string;
+  email: string;
+  message: string;
+}

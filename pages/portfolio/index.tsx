@@ -30,7 +30,20 @@ const Prortfolio = ({ projects }: PortfolioProps) => {
 };
 export default Prortfolio;
 
-export const getServerSideProps = async () => {
+// export const getStaticPaths = async () => {
+//   const res = await fetch(
+//     `https://portfolio-next-api-alpha.vercel.app/api/portfolio`
+//   );
+//   const data: IProjectsList[] = await res.json();
+//   const paths = data.map((d) => ({ params: { id: d.id } }));
+
+//   return {
+//     paths: [...paths],
+//     fallback: false,
+//   };
+// };
+
+export const getStaticProps = async () => {
   const res = await fetch(
     `https://portfolio-next-api-alpha.vercel.app/api/portfolio`
   );
@@ -40,5 +53,6 @@ export const getServerSideProps = async () => {
     props: {
       projects,
     },
+    revalidate: 30,
   };
 };

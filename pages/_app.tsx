@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
           name="description"
           content="i am ahmed shehata front-end developer its an my portfolio website have my contacts info and news"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
         <link
           rel="stylesheet"
           href="https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css"

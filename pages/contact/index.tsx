@@ -1,7 +1,23 @@
 import Head from "next/head";
-import React from "react";
+import React, { useState } from "react";
+import { IContactFormData } from "../../types/types";
 
 const Contact = () => {
+  const [formData, setFormData] = useState<Partial<IContactFormData>>();
+  const [isValidForm, setIsValidForm] = useState(false);
+
+  const handleChangeFormData = (ev: React.ChangeEvent) => {
+    const input = ev.target as HTMLInputElement;
+    const form = input.closest("form");
+    const inputName = input.name;
+    const inputValue = input.value;
+
+    setFormData((prev) => ({ ...prev, [inputName]: inputValue }));
+    if (form?.checkValidity()) {
+      setIsValidForm(true);
+    }
+  };
+
   return (
     <section className="contact-section">
       <Head>
@@ -46,7 +62,11 @@ const Contact = () => {
             <input
               className="w-full min-h-full flex-1 flex-grow px-3 text-white  bg-slate-800 focus:bg-slate-700 focus:outline-0"
               type="text"
+              name="name"
               placeholder="Your name"
+              value={formData?.name}
+              onChange={handleChangeFormData}
+              required={true}
             />
           </span>
           <span className="input-wrapper">
@@ -57,6 +77,10 @@ const Contact = () => {
               className="w-full min-h-full flex-1 flex-grow px-3 text-white  bg-slate-800 focus:bg-slate-700 focus:outline-0"
               type="email"
               placeholder="email address"
+              name="email"
+              value={formData?.email}
+              onChange={handleChangeFormData}
+              required={true}
             />
           </span>
           <span className="input-wrapper">
@@ -65,10 +89,18 @@ const Contact = () => {
             </span>
             <textarea
               className="w-full h-28 flex-1 flex-grow px-3 py-2 text-white  bg-slate-800 focus:bg-slate-700 focus:outline-0"
-              placeholder="email address"
+              placeholder="your message here"
+              value={formData?.message}
+              name="message"
+              onChange={handleChangeFormData}
+              required={true}
             />
           </span>
-          <button className="btn w-1/4 text-slate-100 mt-4" type="submit">
+          <button
+            className="btn w-1/4 text-slate-100 mt-4"
+            type="submit"
+            disabled={!isValidForm}
+          >
             send message
           </button>
         </form>

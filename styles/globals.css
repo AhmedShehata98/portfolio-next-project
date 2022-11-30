@@ -48,10 +48,10 @@
     @apply lg:w-3/4 h-fit text-white flex flex-col justify-center items-start px-10 py-5 z-10;
   }
   .btn-outline {
-    @apply flex items-center justify-center gap-2 py-1.5 px-3 text-violet-400 text-sm font-bold rounded uppercase border-2 border-violet-500  hover:text-violet-900 transition-colors;
+    @apply flex items-center justify-center gap-2 py-1.5 px-3 text-violet-400 text-sm font-bold rounded uppercase border-2 border-violet-500  hover:text-violet-900 transition-colors duration-300 disabled:bg-zinc-400 disabled:border-slate-500;
   }
   .btn {
-    @apply flex items-center justify-center gap-2 py-2 px-3 bg-violet-500 border border-violet-500 rounded hover:bg-violet-700 text-sm font-semibold uppercase transition-colors;
+    @apply flex items-center justify-center gap-2 py-2 px-3 bg-violet-500 border border-violet-500 rounded hover:bg-violet-700 text-sm font-semibold uppercase transition-colors duration-300 disabled:bg-zinc-400 disabled:border-slate-500;
   }
   .portfolio-section {
     @apply flex flex-col justify-start items-start max-h-[82vh] overflow-auto w-11/12 mx-auto lg:w-3/4 lg:px-2;
@@ -80,6 +80,29 @@
   }
   .input-wrapper {
     @apply flex w-full;
+  }
+  .news-section {
+    @apply z-10 flex flex-col justify-start items-start max-h-[82vh] overflow-auto w-11/12 mx-auto lg:w-3/4 lg:px-2;
+  }
+  .news-section ::-webkit-scrollbar {
+    appearance: none;
+    --webkit-appearance: none;
+    width: 0px;
+  }
+  .feeds-list {
+    @apply relative w-full flex flex-col justify-center items-center gap-3 mt-6 ml-3 after:absolute after:left-0 after:-top-3 after:w-[2px] after:h-full after:bg-slate-100;
+  }
+  .feed-box {
+    @apply flex items-start flex-col lg:flex-row justify-start min-h-[180px] lg:h-[145px];
+  }
+  .indicator {
+    @apply relative z-10 grid place-items-center border-b w-1/4 lg:w-1/5 h-1/2 text-sm py-2 px-4 text-white after:absolute after:bottom-0 after:translate-y-1/2 after:-translate-x-1/4 after:-left-1 after:bg-cyan-600 after:w-5 after:h-5 after:rounded-full;
+  }
+  .feed-content {
+    @apply w-4/5 lg:w-[60%] min-h-[inherit] flex flex-col items-start justify-start bg-slate-600 divide-y divide-slate-500 overflow-hidden rounded-tl rounded-bl shadow-md;
+  }
+  .feed-image {
+    @apply grid place-items-center w-4/5 lg:w-1/5 min-h-[inherit] overflow-hidden rounded-tr rounded-br shadow-md;
   }
 }
 @tailwind utilities;
