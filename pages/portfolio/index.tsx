@@ -1,6 +1,6 @@
 import Head from "next/head";
 import ProjectTile from "../../components/ProjectTile";
-import { IProjectsList, PortfolioProps } from "./types";
+import { IProjectsList, PortfolioProps } from "../../types/types";
 
 const Prortfolio = ({ projects }: PortfolioProps) => {
   return (
@@ -30,7 +30,7 @@ const Prortfolio = ({ projects }: PortfolioProps) => {
 };
 export default Prortfolio;
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const res = await fetch(
     `http://https://portfolio-next-api-alpha.vercel.app/api/portfolio`
   );
