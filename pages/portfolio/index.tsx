@@ -1,9 +1,7 @@
 import Head from "next/head";
 import ProjectTile from "../../components/ProjectTile";
-import { IProjectsList } from "./types";
-type PortfolioProps = {
-  projects: IProjectsList[];
-};
+import { IProjectsList, PortfolioProps } from "./types";
+
 const Prortfolio = ({ projects }: PortfolioProps) => {
   return (
     <section className="portfolio-section">

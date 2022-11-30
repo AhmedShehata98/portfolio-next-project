@@ -7,3 +7,6 @@ export interface IProjectsList {
   repositoryUrl: string;
   demoUrl: string;
 }
+export type PortfolioProps = {
+  projects: IProjectsList[];
+};
