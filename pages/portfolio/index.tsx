@@ -1,6 +1,6 @@
 import Head from "next/head";
 import ProjectTile from "../../components/ProjectTile";
-import { IProjectsList } from "../../ApiData/portfolioData";
+import { IProjectsList } from "./types";
 type PortfolioProps = {
   projects: IProjectsList[];
 };
