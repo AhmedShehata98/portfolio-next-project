@@ -32,7 +32,7 @@ export default Prortfolio;
 
 export const getServerSideProps = async () => {
   const res = await fetch(
-    `http://https://portfolio-next-api-alpha.vercel.app/api/portfolio`
+    `https://portfolio-next-api-alpha.vercel.app/api/portfolio`
   );
   const projects = await res.json();
 
