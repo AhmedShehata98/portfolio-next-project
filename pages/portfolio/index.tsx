@@ -1,13 +1,10 @@
-import axios from "axios";
 import Head from "next/head";
-import Image from "next/image";
 import ProjectTile from "../../components/ProjectTile";
 import { IProjectsList } from "../../ApiData/portfolioData";
 type PortfolioProps = {
   projects: IProjectsList[];
 };
 const Prortfolio = ({ projects }: PortfolioProps) => {
-  console.log(projects);
   return (
     <section className="portfolio-section">
       <Head>
@@ -35,9 +32,11 @@ const Prortfolio = ({ projects }: PortfolioProps) => {
 };
 export default Prortfolio;
 
-export const getServerSideProps = async () => {
-  const res = await axios.get(`http://localhost:3000/api/portfolio`);
-  const projects = await res.data;
+export const getStaticProps = async () => {
+  const res = await fetch(
+    `http://https://portfolio-next-api-alpha.vercel.app/api/portfolio`
+  );
+  const projects = await res.json();
 
   return {
     props: {

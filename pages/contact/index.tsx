@@ -2,7 +2,6 @@ import Head from "next/head";
 import React from "react";
 
 const Contact = () => {
-  console.log("asd");
   return (
     <section className="contact-section">
       <Head>
