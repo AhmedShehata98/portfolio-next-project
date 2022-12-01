@@ -22,6 +22,7 @@ const Prortfolio = ({ projects }: PortfolioProps) => {
                 key={nanoid(6)}
                 title={project?.title}
                 imageLink={project.mediaUrl}
+                discription={project?.discription}
                 technologies={project?.technologies}
                 repositoryLink={project.repositoryUrl}
                 demoLink={project?.demoUrl}
