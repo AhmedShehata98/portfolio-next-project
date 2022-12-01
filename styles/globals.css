@@ -54,7 +54,7 @@
     @apply flex items-center justify-center gap-2 py-2 px-3 bg-violet-500 border border-violet-500 rounded hover:bg-violet-700 text-sm font-semibold uppercase transition-colors duration-300 disabled:bg-zinc-400 disabled:border-slate-500;
   }
   .portfolio-section {
-    @apply flex flex-col justify-start items-start max-h-[82vh] overflow-auto w-11/12 mx-auto lg:w-3/4 lg:px-2;
+    @apply relative z-10 flex flex-col justify-start items-start max-h-[82vh] h-[82vh] overflow-auto w-11/12 mx-auto lg:w-3/4 lg:px-2;
   }
   .project-tile {
     @apply relative flex flex-col shadow-md rounded overflow-hidden;
@@ -65,7 +65,7 @@
     width: 0px;
   }
   .contact-section {
-    @apply z-10 flex flex-col justify-start items-start max-h-[82vh] overflow-auto w-11/12 mx-auto lg:w-3/4 lg:px-2;
+    @apply z-10 flex flex-col justify-start items-start gap-3 max-h-[82vh] overflow-auto w-11/12 mx-auto lg:w-3/4 lg:px-2;
   }
   .contact-section::-webkit-scrollbar {
     appearance: none;
@@ -90,16 +90,16 @@
     width: 0px;
   }
   .feeds-list {
-    @apply relative w-full flex flex-col justify-center items-end lg:items-center gap-3 mt-6 ml-3 after:absolute after:left-0 after:-top-3 after:w-[2px] after:h-full after:bg-slate-100;
+    @apply relative w-full h-max flex flex-col justify-center items-end lg:items-center gap-6 after:absolute after:left-0 after:-top-3 after:w-[2px] after:h-full after:bg-slate-100 my-2;
   }
   .feed-box {
-    @apply relative flex items-start flex-col lg:flex-row justify-start w-5/6 lg:w-full lg:min-h-max lg:h-[170px];
+    @apply relative flex items-start flex-col lg:flex-row justify-start w-full lg:min-h-max lg:h-[170px];
   }
   .indicator {
-    @apply relative z-10 grid place-items-center border-b w-full lg:w-1/5 h-1/2 text-sm py-2 px-4 text-white after:absolute after:bottom-0 after:translate-y-1/2 after:-translate-x-1/4 after:-left-1 after:bg-cyan-600 after:w-5 after:h-5 after:rounded-full;
+    @apply relative z-10 grid place-items-center border-t border-r lg:border-0 lg:border-b w-2/3 lg:w-1/5 lg:h-1/2 text-sm py-2 px-4 text-white after:absolute after:top-0 lg:after:top-auto lg:after:bottom-0 after:-translate-y-1/2 lg:after:translate-y-1/2 after:-translate-x-1/4 after:-left-1 after:bg-cyan-600 after:w-4 after:h-4 after:rounded-full;
   }
   .feed-wrapper {
-    @apply flex flex-col lg:flex-wrap w-full h-full bg-gray-600 border lg:border-r-0 border-slate-500 shadow-lg;
+    @apply flex flex-col lg:flex-wrap w-4/5 self-end h-full bg-gray-600 border lg:border-r-0 border-slate-500 shadow-lg hover:shadow-2xl transition-transform duration-500 hover:-translate-y-2;
   }
   .feed-content {
     @apply flex flex-col items-start justify-start w-full lg:w-3/4 min-h-full divide-y divide-slate-400 overflow-hidden;

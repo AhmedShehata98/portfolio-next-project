@@ -1,6 +1,7 @@
 import { nanoid } from "nanoid";
 import Head from "next/head";
 import React from "react";
+import CopyRights from "../../components/CopyRights";
 import FeedBox from "../../components/FeedBox";
 
 const NewsFeed = () => {
@@ -10,7 +11,7 @@ const NewsFeed = () => {
         <title>News Feeds</title>
       </Head>
       <h3 className="text-white text-xl uppercase">My latest achievement</h3>
-      <div className="w-full max-h-[82vh] h-[82vh] overflow-x-hidden overflow-y-auto pr-5">
+      <div className="w-full max-h-[82vh] h-[82vh] overflow-x-hidden overflow-y-auto px-8 my-5">
         <ul className="feeds-list">
           <FeedBox
             key={nanoid(6)}
@@ -38,6 +39,7 @@ const NewsFeed = () => {
           />
         </ul>
       </div>
+      <CopyRights />
     </section>
   );
 };

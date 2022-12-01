@@ -1,5 +1,6 @@
 import Head from "next/head";
 import React, { useState } from "react";
+import CopyRights from "../../components/CopyRights";
 import { IContactFormData } from "../../types/types";
 
 const Contact = () => {
@@ -105,6 +106,7 @@ const Contact = () => {
           </button>
         </form>
       </div>
+      <CopyRights />
     </section>
   );
 };

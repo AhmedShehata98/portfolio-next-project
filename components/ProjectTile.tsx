@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 type projectTileProps = {
@@ -55,9 +56,11 @@ const ProjectTile = ({
       onMouseLeave={(ev: React.MouseEvent) => handleHideTileDitails(ev)}
     >
       <figure className="inline-block m-0 h-64 overflow-hidden pointer-events-none select-none">
-        <img
+        <Image
           src={imageLink}
           alt="project-img"
+          width={265}
+          height={265}
           className="min-w-full object-cover "
         />
       </figure>
