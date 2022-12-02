@@ -57,7 +57,7 @@
     @apply relative z-10 flex flex-col justify-start items-start max-h-[82vh] h-[82vh] overflow-auto w-11/12 mx-auto lg:w-3/4 lg:px-2;
   }
   .project-tile {
-    @apply relative flex flex-col shadow-md rounded overflow-hidden;
+    @apply relative flex flex-col shadow-md rounded-sm overflow-hidden;
   }
   .portfolio-section::-webkit-scrollbar {
     appearance: none;
