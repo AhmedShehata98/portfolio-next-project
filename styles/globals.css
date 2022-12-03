@@ -7,34 +7,37 @@
 @tailwind components;
 @layer components {
   .header-bar {
-    @apply fixed top-0 z-40 left-0 w-full flex justify-between items-center py-2 lg:my-4 bg-slate-800 text-white;
+    @apply fixed top-0 z-20 left-0 w-full flex justify-between items-center py-2 lg:my-4 bg-slate-800 text-white;
   }
   .navbar {
     @apply lg:relative flex lg:items-center lg:justify-around lg:w-2/5 lg:text-sm uppercase font-semibold absolute right-0 top-0 w-9/12 border lg:border-0 lg:h-14 h-screen bg-slate-600 lg:bg-slate-800 flex-col lg:flex-row justify-start items-start pt-14 lg:pt-0 px-6 lg:px-0 translate-x-full lg:translate-x-0 opacity-0 lg:opacity-100 pointer-events-none lg:pointer-events-auto gap-1 text-lg transition-all duration-300;
   }
   .active-link {
-    @apply text-cyan-600;
+    @apply text-emerald-600;
   }
   .navbar-mobile-show {
     @apply opacity-100 pointer-events-auto translate-x-0;
   }
+  .navbar-link {
+    @apply px-3 py-2 rounded-3xl hover:text-emerald-500 transition-colors;
+  }
   .toggler-navbar {
-    @apply z-10 flex items-center justify-start  bg-slate-900 px-3 py-3 lg:hidden;
+    @apply z-10 flex items-center justify-start rounded-full bg-slate-900 px-3 py-3 lg:hidden;
   }
   .toggler-navbar-active {
-    @apply absolute top-0 right-0  py-4 px-9 mb-1 rounded-tl rounded-tr w-3/4 border border-slate-500;
+    @apply absolute top-0 right-0  py-4 px-9 mb-1 rounded-none rounded-tl rounded-tr w-3/4 border border-slate-500;
   }
   .component-wrapper {
-    @apply relative z-20 lg:max-h-screen overflow-hidden container mx-auto pt-24 flex items-start justify-between flex-col lg:flex-row gap-2;
+    @apply relative z-20 lg:max-h-screen overflow-hidden container mx-auto pt-20 lg:pt-24 flex items-start justify-between flex-col lg:flex-row gap-2;
   }
   .side-pannel {
-    @apply w-11/12 mx-auto lg:mx-0 lg:w-80 h-[82vh] flex flex-col justify-between items-center bg-slate-900 rounded overflow-hidden shadow-md divide-y divide-slate-500 z-10;
+    @apply w-[95%] mx-auto lg:mx-0 lg:w-80 h-[86vh] lg:h-[82vh] flex flex-col justify-between items-center bg-slate-900 rounded overflow-hidden border border-slate-700 shadow-md divide-y divide-slate-500 z-10;
   }
   .home-section {
-    @apply w-full lg:w-3/4 max-h-[82vh] overflow-auto flex flex-col items-start justify-start gap-4 px-4 py-2 bg-no-repeat bg-cover;
+    @apply w-full lg:w-3/4 h-[90vh] lg:max-h-[82vh] overflow-auto flex flex-col items-start justify-start gap-4 px-4 py-2 bg-no-repeat bg-cover;
   }
   .overlay {
-    @apply relative after:absolute after:inset-0 after:bg-slate-800 after:bg-opacity-80 after:w-full after:min-h-full;
+    @apply relative z-10 after:absolute after:isolate after:inset-0 after:bg-slate-800 after:bg-opacity-80 after:w-full after:min-h-full;
   }
   .home-section::-webkit-scrollbar {
     appearance: none;
@@ -42,10 +45,10 @@
     width: 0px;
   }
   .hero {
-    @apply relative z-20 isolate w-full h-[44rem] flex flex-col justify-center items-start bg-gray-700 rounded shadow-lg;
+    @apply relative z-20 isolate w-full min-h-[20rem] flex flex-col justify-center items-start bg-gray-700 rounded shadow-lg;
   }
   .hero-heading-wrapper {
-    @apply lg:w-3/4 h-fit text-white flex flex-col justify-center items-start px-10 py-5 z-10;
+    @apply lg:w-3/4 h-fit text-white flex flex-col justify-center items-center lg:items-start px-5 lg:px-10 py-5 z-10;
   }
   .btn-outline {
     @apply flex items-center justify-center gap-2 py-1.5 px-3 text-violet-400 text-sm font-bold rounded uppercase border-2 border-violet-500  hover:text-violet-900 transition-colors duration-300 disabled:bg-zinc-400 disabled:border-slate-500;
@@ -54,10 +57,10 @@
     @apply flex items-center justify-center gap-2 py-2 px-3 bg-violet-500 border border-violet-500 rounded hover:bg-violet-700 text-sm font-semibold uppercase transition-colors duration-300 disabled:bg-zinc-400 disabled:border-slate-500;
   }
   .portfolio-section {
-    @apply relative z-10 flex flex-col justify-start items-start max-h-[82vh] h-[82vh] overflow-auto w-11/12 mx-auto lg:w-3/4 lg:px-2;
+    @apply relative z-10 flex flex-col justify-start items-start max-h-[90vh] lg:max-h-[82vh] h-[90vh] lg:h-[82vh] overflow-auto w-11/12 mx-auto lg:w-3/4 lg:px-2;
   }
   .projects-wrapper {
-    @apply min-w-full max-h-[82vh] flex flex-col overflow-y-auto mb-4;
+    @apply min-w-full max-h-[90vh] lg:max-h-[82vh] flex flex-col overflow-y-auto mb-4;
   }
   .projects-wrapper::-webkit-scrollbar {
     appearance: none;
@@ -79,7 +82,7 @@
     width: 0px;
   }
   .contact-section {
-    @apply z-10 flex flex-col justify-start items-start gap-3 max-h-[82vh] overflow-auto w-11/12 mx-auto lg:w-3/4 lg:px-2;
+    @apply z-10 flex flex-col justify-start items-start gap-3 max-h-[90vh] lg:max-h-[82vh] overflow-auto w-11/12 mx-auto lg:w-3/4 lg:px-2;
   }
   .contact-section::-webkit-scrollbar {
     appearance: none;
@@ -87,7 +90,7 @@
     width: 0px;
   }
   .contact-boxs {
-    @apply flex flex-col gap-4;
+    @apply flex flex-col gap-4 w-full;
   }
   .send-message {
     @apply flex flex-col gap-3 mt-4  w-full;
@@ -96,7 +99,7 @@
     @apply flex w-full;
   }
   .news-section {
-    @apply z-10 flex flex-col justify-start items-start max-h-[82vh] overflow-auto w-11/12 mx-auto lg:w-3/4 lg:px-2;
+    @apply z-10 flex flex-col justify-start items-start max-h-[90vh] lg:max-h-[82vh] overflow-auto w-11/12 mx-auto lg:w-3/4 lg:px-2;
   }
   .news-section ::-webkit-scrollbar {
     appearance: none;
@@ -110,7 +113,7 @@
     @apply relative flex items-start flex-col lg:flex-row justify-start w-full lg:min-h-max lg:h-[170px];
   }
   .indicator {
-    @apply relative z-10 grid place-items-center border-t border-r lg:border-0 lg:border-b w-2/3 lg:w-1/5 lg:h-1/2 text-sm py-2 px-4 text-white after:absolute after:top-0 lg:after:top-auto lg:after:bottom-0 after:-translate-y-1/2 lg:after:translate-y-1/2 after:-translate-x-1/4 after:-left-1 after:bg-cyan-600 after:w-4 after:h-4 after:rounded-full;
+    @apply relative z-10 grid place-items-center border-t border-r lg:border-0 lg:border-b w-2/3 lg:w-1/5 lg:h-1/2 text-sm py-2 px-4 text-white after:absolute after:top-0 lg:after:top-auto lg:after:bottom-0 after:-translate-y-1/2 lg:after:translate-y-1/2 after:-translate-x-1/4 after:-left-1 after:bg-emerald-600 after:w-4 after:h-4 after:rounded-full;
   }
   .feed-wrapper {
     @apply flex flex-col lg:flex-wrap w-4/5 self-end h-full bg-gray-600 border lg:border-r-0 border-slate-500 shadow-lg hover:shadow-2xl transition-transform duration-500 hover:-translate-y-2;

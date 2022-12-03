@@ -2,12 +2,16 @@ import egyFlag from "../assets/egypt.png";
 import upworkIco from "../assets/upwork.svg";
 import profilePicture from "../assets/profile-picture.webp";
 import Image from "next/image";
+import { useState } from "react";
 
 const SidePannel = () => {
+  const [avaliable, setavaliable] = useState<boolean>(true);
   return (
     <aside className="side-pannel">
-      <div className="w-full h-56 bg-gradient-to-t from-slate-700 flex justify-center items-center flex-col gap-3">
-        <figure className="relative w-24 ">
+      <div
+        className={`w-full h-56 bg-gradient-to-t from-slate-700 to-slate-700 flex justify-center items-center flex-col gap-3 500`}
+      >
+        <figure className="relative w-28 lg:w-24 ">
           <Image
             src={profilePicture.src}
             alt="profile-img"
@@ -15,13 +19,21 @@ const SidePannel = () => {
             width={100}
             height={100}
           />
-          <span className="active-idicator absolute bottom-2 right-1 bg-emerald-400 w-4 h-4 rounded-full shadow-lg animate-ping"></span>
-          <span className="active-idicator absolute bottom-2 right-1 bg-emerald-400 w-4 h-4 rounded-full shadow-lg "></span>
+          <span
+            className={`active-idicator absolute bottom-2 right-3 lg:right-1 ${
+              avaliable ? "bg-emerald-400" : "bg-orange-300"
+            } w-4 h-4 rounded-full shadow-lg animate-ping`}
+          ></span>
+          <span
+            className={`active-idicator absolute bottom-2 right-3 lg:right-1 ${
+              avaliable ? "bg-emerald-400" : "bg-yellow-400"
+            } w-4 h-4 rounded-full shadow-lg `}
+          ></span>
         </figure>
         <span className="grid place-content-center place-items-center text-white">
           <p className="mb-3 font-semibold">Ahmed Shehata</p>
           <p className="font-mono text-sm">Front-end Web Development</p>
-          <p className="text-cyan-400">React.JS web developer</p>
+          <p className="text-emerald-400">React.JS web developer</p>
         </span>
       </div>
       <div className="w-full flex flex-col gap-2 px-6 py-5 bg-slate-900 text-white uppercase !border-0">

@@ -7,12 +7,15 @@ type ServItemsProp = {
 };
 const ServItems = ({ description, link, title }: ServItemsProp) => {
   return (
-    <li className="flex flex-col items-start gap-4 shadow-lg bg-slate-600 p-3">
+    <li className="flex flex-col items-start justify-between gap-4 shadow-lg bg-slate-600 p-3">
       <span>
         <h4 className="text-lg uppercase text-white mb-2">{title}</h4>
         <small className="text-neutral-400 capitalize">{description}</small>
       </span>
-      <Link href={link} className="px-3 py-1 uppercase text-cyan-400">
+      <Link
+        href={link}
+        className="flex items-center gap-3 px-3 py-1 self-center lg:self-start uppercase text-emerald-400"
+      >
         order now
         <i className="fi fi-sr-angle-right leading-3 text-xs"></i>
       </Link>

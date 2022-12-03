@@ -1,5 +1,7 @@
+import { nanoid } from "nanoid";
 import Head from "next/head";
 import React, { useState } from "react";
+import ContactBox from "../../components/ContactBox";
 import CopyRights from "../../components/CopyRights";
 import { IContactFormData } from "../../types/types";
 
@@ -26,31 +28,50 @@ const Contact = () => {
       </Head>
       <div className="contact-boxs">
         <h3 className="text-white text-xl uppercase">contact informations</h3>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-          <li className="flex flex-col gap-2 px-3 py-6 uppercase bg-slate-600 rounded shadow-md">
-            <span className="flex items-center justify-between gap-3">
-              <p className="text-zinc-50">email :</p>
-              <small className="text-zinc-300">ahmedshehataq98@gmail.com</small>
-            </span>
-            <span className="flex items-center justify-between gap-3">
-              <p className="text-zinc-50">telegram :</p>
-              <small className="text-zinc-300">@ahmedshehata98</small>
-            </span>
-            <span className="flex items-center justify-between gap-3">
-              <p className="text-zinc-50">whatsapp :</p>
-              <small className="text-zinc-300">@01096019665</small>
-            </span>
-          </li>
-          <li className="flex flex-col gap-2 px-3 py-6 uppercase bg-slate-600 rounded shadow-md">
-            <span className="flex items-center justify-between gap-3">
-              <p className="text-zinc-50">personal :</p>
-              <small className="text-zinc-300">+20-01096019665</small>
-            </span>
-            <span className="flex items-center justify-between gap-3">
-              <p className="text-zinc-50">Linked-IN :</p>
-              <small className="text-zinc-300">/in/ahmed-shehata98</small>
-            </span>
-          </li>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 w-full">
+          <ContactBox
+            key={nanoid(6)}
+            contacts={[
+              {
+                key: "email",
+                value: "ahmedshehata98@outlook.sa",
+              },
+              {
+                key: "telegram",
+                value: "@ahmedshehata98",
+              },
+              {
+                key: "whatsapp",
+                value: "@01096019665",
+              },
+            ]}
+          />
+          <ContactBox
+            key={nanoid(6)}
+            contacts={[
+              {
+                key: "personal",
+                value: "+20-01096019665",
+              },
+              {
+                key: "Linked-IN",
+                value: "/in/ahmed-shehata98",
+              },
+            ]}
+          />
+          <ContactBox
+            key={nanoid(6)}
+            contacts={[
+              {
+                key: "upwork",
+                value: "/~01b20a553681d081b1",
+              },
+              {
+                key: "Ureed",
+                value: "/ahmed-123182",
+              },
+            ]}
+          />
         </ul>
       </div>
       <div className="send-message">
@@ -98,7 +119,7 @@ const Contact = () => {
             />
           </span>
           <button
-            className="btn w-1/4 text-slate-100 mt-4"
+            className="btn w-full lg:w-1/4 text-slate-100 mt-4"
             type="submit"
             disabled={!isValidForm}
           >

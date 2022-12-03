@@ -21,6 +21,26 @@ const Navbar = () => {
       btn.parentElement?.classList.remove("toggler-navbar-active");
     }
   };
+  const handleHideNavbar = (
+    navbarRef: React.MutableRefObject<HTMLElement | null>
+  ) => {
+    navbarRef.current?.addEventListener("click", (ev) => {
+      const link = ev.target as HTMLElement;
+      const togglerBtn = navbarRef.current?.parentElement?.children[1];
+
+      if (
+        !link.classList.contains("navbar") ||
+        !link.classList.contains("navbar-link")
+      ) {
+        navbarRef.current?.classList.remove("navbar-mobile-show");
+        togglerBtn?.classList.remove("toggler-navbar-active");
+      }
+    });
+  };
+
+  useEffect(() => {
+    handleHideNavbar(navbarRef);
+  }, []);
 
   return (
     <header className="header-bar">
@@ -28,47 +48,33 @@ const Navbar = () => {
         <Link href="/" className="bg-gray-900 px-4 rounded-full">
           <img src="./logo.png" alt="logo" className="w-24 object-cover" />
         </Link>
-        <div className="toggler-navbar ">
+        <div className="toggler-navbar">
           <button
             onClick={(ev: React.MouseEvent) => handleShowNavbar(ev)}
             type="button"
-            className="grid place-content-center place-items-center text-2xl text-white cursor-pointer "
+            className="grid place-content-center place-items-center text-2xl text-white rounded-full cursor-pointer "
           >
             <i className="fi fi-sr-menu-burger leading-3 pointer-events-none select-none"></i>
           </button>
         </div>
         <nav ref={navbarRef} className="navbar">
-          <Link
-            className="px-3 py-2 rounded-3xl hover:text-cyan-500 transition-colors"
-            href="/"
-            id="home"
-          >
+          <Link className="navbar-link" href="/" id="home">
             home
           </Link>
-          <Link
-            className="px-3 py-2 rounded-3xl hover:text-cyan-500 transition-colors"
-            href="/portfolio"
-            id="portfolio"
-          >
+          <Link className="navbar-link" href="/portfolio" id="portfolio">
             portfolio
           </Link>
-          <Link
-            className="px-3 py-2 rounded-3xl hover:text-cyan-500 transition-colors"
-            href="/contact"
-            id="contact"
-          >
+          <Link className="navbar-link" href="/contact" id="contact">
             contact
           </Link>
-          <Link
-            className="px-3 py-2 rounded-3xl hover:text-cyan-500 transition-colors"
-            href="/news"
-            id="news"
-          >
+          <Link className="navbar-link" href="/news" id="news">
             news
           </Link>
           <Link
-            className="px-8 py-2 rounded-3xl bg-cyan-500 hover:bg-gray-500 hover:text-cyan-400"
-            href="/hire"
+            className="px-8 py-2 rounded-3xl bg-emerald-500 text-black hover:bg-gray-500 hover:text-emerald-400"
+            href="https://www.upwork.com/freelancers/~01b20a553681d081b1"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             hire me
           </Link>

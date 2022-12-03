@@ -3,7 +3,7 @@ import ServItems from "./ServItems";
 
 const Services = () => {
   return (
-    <div className="flex flex-col relative z-10">
+    <div className="flex flex-col relative z-10 mt-6">
       <h4 className="mt-2 mb-4 uppercase text-white text-lg font-bold">
         services
       </h4>
