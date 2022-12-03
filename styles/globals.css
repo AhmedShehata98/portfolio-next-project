@@ -7,7 +7,7 @@
 @tailwind components;
 @layer components {
   .header-bar {
-    @apply fixed top-0 z-20 left-0 w-full flex justify-between items-center py-2 lg:my-4 bg-slate-800 text-white;
+    @apply fixed top-0 z-40 left-0 w-full flex justify-between items-center py-2 lg:my-4 bg-slate-800 text-white;
   }
   .navbar {
     @apply lg:relative flex lg:items-center lg:justify-around lg:w-2/5 lg:text-sm uppercase font-semibold absolute right-0 top-0 w-9/12 border lg:border-0 lg:h-14 h-screen bg-slate-600 lg:bg-slate-800 flex-col lg:flex-row justify-start items-start pt-14 lg:pt-0 px-6 lg:px-0 translate-x-full lg:translate-x-0 opacity-0 lg:opacity-100 pointer-events-none lg:pointer-events-auto gap-1 text-lg transition-all duration-300;
@@ -16,7 +16,7 @@
     @apply text-cyan-600;
   }
   .navbar-mobile-show {
-    @apply opacity-100 pointer-events-none translate-x-0;
+    @apply opacity-100 pointer-events-auto translate-x-0;
   }
   .toggler-navbar {
     @apply z-10 flex items-center justify-start  bg-slate-900 px-3 py-3 lg:hidden;
@@ -25,7 +25,7 @@
     @apply absolute top-0 right-0  py-4 px-9 mb-1 rounded-tl rounded-tr w-3/4 border border-slate-500;
   }
   .component-wrapper {
-    @apply relative lg:max-h-screen overflow-hidden container mx-auto pt-24 flex items-start justify-between flex-col lg:flex-row gap-2;
+    @apply relative z-20 lg:max-h-screen overflow-hidden container mx-auto pt-24 flex items-start justify-between flex-col lg:flex-row gap-2;
   }
   .side-pannel {
     @apply w-11/12 mx-auto lg:mx-0 lg:w-80 h-[82vh] flex flex-col justify-between items-center bg-slate-900 rounded overflow-hidden shadow-md divide-y divide-slate-500 z-10;
@@ -56,8 +56,22 @@
   .portfolio-section {
     @apply relative z-10 flex flex-col justify-start items-start max-h-[82vh] h-[82vh] overflow-auto w-11/12 mx-auto lg:w-3/4 lg:px-2;
   }
+  .projects-wrapper {
+    @apply min-w-full max-h-[82vh] flex flex-col overflow-y-auto mb-4;
+  }
+  .projects-wrapper::-webkit-scrollbar {
+    appearance: none;
+    --webkit-appearance: none;
+    width: 0px;
+  }
   .project-tile {
-    @apply relative flex flex-col shadow-md rounded-sm overflow-hidden;
+    @apply relative grid h-64 overflow-hidden;
+  }
+  .tile-details {
+    @apply absolute bottom-0 left-0 w-full px-2 py-4 flex flex-col gap-2 items-start bg-slate-600 transition-all duration-500 translate-y-full opacity-0 border-t-4 border-violet-500;
+  }
+  .project-tile-show {
+    @apply translate-y-0 opacity-100;
   }
   .portfolio-section::-webkit-scrollbar {
     appearance: none;
