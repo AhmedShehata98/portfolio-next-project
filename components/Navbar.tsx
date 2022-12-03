@@ -1,11 +1,14 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 type navbarProps = {
   currentPage: string;
 };
 const Navbar = () => {
   const navbarRef = useRef<HTMLElement | null>(null);
+
+  const { route } = useRouter();
 
   const handleShowNavbar = (ev: React.MouseEvent) => {
     const btn = ev.target as HTMLButtonElement;
@@ -21,7 +24,7 @@ const Navbar = () => {
       btn.parentElement?.classList.remove("toggler-navbar-active");
     }
   };
-  const handleHideNavbar = (
+  const handleClickNavlinks = (
     navbarRef: React.MutableRefObject<HTMLElement | null>
   ) => {
     navbarRef.current?.addEventListener("click", (ev) => {
@@ -39,7 +42,7 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    handleHideNavbar(navbarRef);
+    handleClickNavlinks(navbarRef);
   }, []);
 
   return (
@@ -52,22 +55,44 @@ const Navbar = () => {
           <button
             onClick={(ev: React.MouseEvent) => handleShowNavbar(ev)}
             type="button"
-            className="grid place-content-center place-items-center text-2xl text-white rounded-full cursor-pointer "
+            className="grid place-content-center place-items-center text-2xl text-white cursor-pointer "
           >
             <i className="fi fi-sr-menu-burger leading-3 pointer-events-none select-none"></i>
           </button>
         </div>
         <nav ref={navbarRef} className="navbar">
-          <Link className="navbar-link" href="/" id="home">
+          <Link
+            className={`navbar-link ${route === "/" && "link-active"}`}
+            href="/"
+            id="/"
+          >
             home
           </Link>
-          <Link className="navbar-link" href="/portfolio" id="portfolio">
+          <Link
+            className={`navbar-link ${
+              route.split("/")[1] === "portfolio" && "link-active"
+            }`}
+            href="/portfolio"
+            id="portfolio"
+          >
             portfolio
           </Link>
-          <Link className="navbar-link" href="/contact" id="contact">
+          <Link
+            className={`navbar-link ${
+              route.split("/")[1] === "contact" && "link-active"
+            }`}
+            href="/contact"
+            id="contact"
+          >
             contact
           </Link>
-          <Link className="navbar-link" href="/news" id="news">
+          <Link
+            className={`navbar-link ${
+              route.split("/")[1] === "news" && "link-active"
+            }`}
+            href="/news"
+            id="news"
+          >
             news
           </Link>
           <Link

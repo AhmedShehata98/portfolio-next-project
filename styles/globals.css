@@ -21,6 +21,9 @@
   .navbar-link {
     @apply px-3 py-2 rounded-3xl hover:text-emerald-500 transition-colors;
   }
+  .link-active {
+    @apply text-emerald-600;
+  }
   .toggler-navbar {
     @apply z-10 flex items-center justify-start rounded-full bg-slate-900 px-3 py-3 lg:hidden;
   }
