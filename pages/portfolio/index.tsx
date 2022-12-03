@@ -66,7 +66,7 @@ const Prortfolio = ({ projects }: PortfolioProps) => {
 
   useEffect(() => {
     manipulationTileVisibility(porjectsListRef);
-  }, []);
+  }, [manipulationTileVisibility]);
   return (
     <>
       {showProjectDetails && (
