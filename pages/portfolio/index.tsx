@@ -48,25 +48,36 @@ const Prortfolio = ({ projects }: PortfolioProps) => {
       }
     }
   };
-  function manipulationTileVisibility(
-    Ulref: React.MutableRefObject<HTMLUListElement | null>
-  ) {
-    const listItem = Ulref.current?.children as HTMLCollection;
-    Array.from(listItem).forEach((li) => {
-      li.addEventListener("mouseleave", (ev) => {
-        hideTileDetails(ev);
-        imageScaleEffect(ev, false);
-      });
-      li.addEventListener("mouseover", (ev) => {
-        showTileDetails(ev);
-        imageScaleEffect(ev, true);
-      });
-    });
-  }
 
   useEffect(() => {
+    function manipulationTileVisibility(
+      Ulref: React.MutableRefObject<HTMLUListElement | null>
+    ) {
+      const listItem = Ulref.current?.children as HTMLCollection;
+      Array.from(listItem).forEach((li) => {
+        li.addEventListener("mouseleave", (ev) => {
+          hideTileDetails(ev);
+          imageScaleEffect(ev, false);
+        });
+        li.addEventListener("mouseover", (ev) => {
+          showTileDetails(ev);
+          imageScaleEffect(ev, true);
+        });
+      });
+    }
     manipulationTileVisibility(porjectsListRef);
-  }, [manipulationTileVisibility]);
+
+    return () => {
+      removeEventListener("mouseleave", () => {
+        showTileDetails;
+        imageScaleEffect;
+      });
+      removeEventListener("mouseover", () => {
+        showTileDetails;
+        imageScaleEffect;
+      });
+    };
+  }, []);
   return (
     <>
       {showProjectDetails && (

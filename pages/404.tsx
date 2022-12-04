@@ -20,8 +20,8 @@ function NotFounded() {
         </div>
         <div className="w-11/12 lg:w-1/3 h-1/2 flex justify-center items-center flex-col gap-4 text-center">
           <p className="text-white capitalize">
-            Oops , this page isn't available or maybe Under construction and
-            development .
+            Oops &lsquo; this page isn&apos;t available or maybe Under
+            construction and development .
           </p>
           <Link href={"/"} className="btn">
             back to home
