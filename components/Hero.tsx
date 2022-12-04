@@ -15,16 +15,16 @@ const Hero = () => {
       >
         <span className="inline-block absolute inset-0 bg-gradient-to-tr from-slate-900 to-emerald-700 opacity-50"></span>
         <div className="hero-heading-wrapper">
-          <h2 className="text-xl lg:text-4xl font-bold text-center lg:text-start uppercase mb-8">
+          <h2 className="text-xl lg:text-4xl font-bold text-center lg:text-start uppercase mb-3">
             HELLO, I AM A FRONT-END WEB DEVELOPER
           </h2>
-          <code className="text-sm mb-5">
+          <code className="text-sm mb-12">
             Experience with development by React.JS Library
           </code>
           <div className="w-full flex items-center justify-center lg:justify-start gap-3 mb-3">
             <Link
               href="https://www.upwork.com/freelancers/~01b20a553681d081b1"
-              className="btn px-10"
+              className="btn px-3 lg:px-10"
             >
               hire me
             </Link>

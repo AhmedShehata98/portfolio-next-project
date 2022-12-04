@@ -6,7 +6,7 @@ import FeedBox from "../../components/FeedBox";
 
 const NewsFeed = () => {
   return (
-    <section className="news-section">
+    <section className="news-section" id="/news">
       <Head>
         <title>News Feeds</title>
       </Head>

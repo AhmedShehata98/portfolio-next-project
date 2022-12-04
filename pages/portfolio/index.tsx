@@ -76,7 +76,7 @@ const Prortfolio = ({ projects }: PortfolioProps) => {
           currentProjectIndex={currentProjectIndexRef.current}
         />
       )}
-      <section className="portfolio-section">
+      <section className="portfolio-section" id="/portfolio">
         <Head>
           <title>Portfolio</title>
         </Head>

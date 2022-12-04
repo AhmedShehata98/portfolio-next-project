@@ -2,8 +2,19 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Layout from "../components/Layout";
 import Head from "next/head";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import LoaderModule from "../components/LoaderModule";
 
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  useEffect(() => {
+    router.events.on("routeChangeStart", (url) => setIsLoading(true));
+    router.events.on("routeChangeComplete", (url) => setIsLoading(false));
+    router.events.on("routeChangeError", (url) => setIsLoading(false));
+  }, [router]);
   return (
     <>
       <Head>
@@ -25,6 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
+      {isLoading && <LoaderModule />}
     </>
   );
 }

@@ -59,7 +59,7 @@ const SidePannel = () => {
             <p className="w-1/4 capitalize">arabic :</p>
             <div className="w-3/5 h-3 flex items-center">
               <span
-                className="inline-block bg-violet-400 h-3 rounded-full shadow-md"
+                className="inline-block bg-sky-400 h-3 rounded-full shadow-md"
                 style={{ width: "100%" }}
               ></span>
             </div>
@@ -69,7 +69,7 @@ const SidePannel = () => {
             <p className="w-1/4 capitalize">english :</p>
             <div className="w-3/5 h-3 flex items-center">
               <span
-                className="inline-block bg-violet-400 h-3 rounded-full shadow-md"
+                className="inline-block bg-sky-400 h-3 rounded-full shadow-md"
                 style={{ width: "35%" }}
               ></span>
             </div>

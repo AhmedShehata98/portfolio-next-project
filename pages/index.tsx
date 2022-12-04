@@ -6,6 +6,7 @@ import background from "../assets/background.png";
 export default function Home() {
   return (
     <section
+      id="/"
       className="home-section"
       style={{ backgroundImage: `url(${background.src})` }}
     >

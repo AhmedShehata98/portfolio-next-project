@@ -8,7 +8,16 @@ type navbarProps = {
 const Navbar = () => {
   const navbarRef = useRef<HTMLElement | null>(null);
 
-  const { route } = useRouter();
+  const { route, isReady, events } = useRouter();
+
+  events?.on("routeChangeComplete", (ev) =>
+    ev && ev !== "/"
+      ? window.scrollBy({
+          behavior: "smooth",
+          top: window?.innerHeight,
+        })
+      : null
+  );
 
   const handleShowNavbar = (ev: React.MouseEvent) => {
     const btn = ev.target as HTMLButtonElement;
@@ -30,6 +39,10 @@ const Navbar = () => {
     navbarRef.current?.addEventListener("click", (ev) => {
       const link = ev.target as HTMLElement;
       const togglerBtn = navbarRef.current?.parentElement?.children[1];
+      const togglerIcon = togglerBtn?.firstElementChild?.firstElementChild;
+      if (togglerIcon?.classList.contains("fi-sr-cross")) {
+        togglerIcon?.classList.replace("fi-sr-cross", "fi-sr-menu-burger");
+      }
 
       if (
         !link.classList.contains("navbar") ||
@@ -38,6 +51,9 @@ const Navbar = () => {
         navbarRef.current?.classList.remove("navbar-mobile-show");
         togglerBtn?.classList.remove("toggler-navbar-active");
       }
+
+      // window.scroll({ behavior: "smooth", top: 760 });
+      window.scrollBy({ behavior: "smooth", top: 760 });
     });
   };
 
