@@ -11,7 +11,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Navbar />
-      <main className="component-wrapper overlay ">
+      <main className="component-wrapper overlay-layer">
         {pathname !== "/404" && <SidePannel />}
         {children}
       </main>

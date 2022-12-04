@@ -49,7 +49,7 @@ function ProjectDitails({
   };
 
   return (
-    <div className="fixed z-50 top-0 left-0 w-full h-screen bg-neutral-700 bg-opacity-70 ">
+    <div className="poject-details-preview">
       <section className="container mx-auto flex flex-col justify-between items-center">
         <header className="flex items-center justify-between w-full h-14 px-3 text-white">
           <div>

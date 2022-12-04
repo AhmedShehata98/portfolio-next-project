@@ -15,6 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
     router.events.on("routeChangeComplete", (url) => setIsLoading(false));
     router.events.on("routeChangeError", (url) => setIsLoading(false));
   }, [router]);
+
   return (
     <>
       <Head>
