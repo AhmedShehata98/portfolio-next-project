@@ -16,3 +16,13 @@ export interface IContactFormData {
   email: string;
   message: string;
 }
+
+export type newsFeedPorps = {
+  news: INewsfeed[];
+};
+export interface INewsfeed {
+  id: string;
+  description: string;
+  date: string;
+  media: string;
+}
