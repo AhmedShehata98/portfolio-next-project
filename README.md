@@ -26,7 +26,7 @@ live demo link :
 
 ## Built With
 
-* [React js](https://nextjs.org/docs/) - The frontend framework 
+* [next js](https://nextjs.org/docs/) - The frontend framework 
 * [React js](https://reactjs.org/) - The javascript library used
 * [Webpack](https://webpack.js.org/) - Dependency Management
 * [Tailwind css](https://tailwindcss.com/) - CSS framework
