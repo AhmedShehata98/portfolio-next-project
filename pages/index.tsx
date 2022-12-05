@@ -12,15 +12,17 @@ const Home = ({ skills }: IHomeProps) => {
   const observer = useRef<IntersectionObserver | null>(null);
   const [skillsIsVisible, setSkillsIsVisible] = useState(false);
   const observerOptions = {
-    root: homeSectionRef.current,
+    root: homeSectionRef.current?.parentElement,
     rootMargin: "0px",
-    threshold: 0.5,
+    threshold: 0.4,
   };
   const ObserverCallback = (entries: IntersectionObserverEntry[]) => {
     if (entries[0].isIntersecting) {
       setSkillsIsVisible(true);
     } else {
-      setSkillsIsVisible(false);
+      if (window.innerWidth >= 640) {
+        setSkillsIsVisible(false);
+      }
     }
   };
   useEffect(() => {
@@ -35,38 +37,10 @@ const Home = ({ skills }: IHomeProps) => {
     }
     return () => {
       observer.current?.unobserve(skillsSection);
+      observer.current?.disconnect();
     };
   }, [homeSectionRef.current, observerOptions]);
 
-  useEffect(() => {
-    let timeout: number;
-
-    router.events.on("routeChangeComplete", () => {
-      if (homeSectionRef.current?.classList.contains("hide-section")) {
-        timeout = +setTimeout(() => {
-          homeSectionRef.current?.classList.remove("hide-section");
-        }, 100);
-      }
-    });
-    return () => {
-      clearTimeout(timeout);
-
-      router.events.off("routeChangeComplete", () => {
-        if (homeSectionRef.current?.classList.contains("hide-section")) {
-          timeout = +setTimeout(() => {
-            homeSectionRef.current?.classList.remove("hide-section");
-          }, 100);
-        }
-      });
-    };
-  }, [router]);
-  useEffect(() => {
-    window.addEventListener("load", () => {
-      if (homeSectionRef.current?.classList.contains("hide-section")) {
-        homeSectionRef.current?.classList.remove("hide-section");
-      }
-    });
-  }, [homeSectionRef.current?.classList.contains("hide-section")]);
   return (
     <>
       <Head>
@@ -75,7 +49,7 @@ const Home = ({ skills }: IHomeProps) => {
       <section
         ref={homeSectionRef}
         id="/"
-        className="home-section hide-section"
+        className="home-section"
         style={{ backgroundImage: `url(/background.png)` }}
       >
         <Hero />

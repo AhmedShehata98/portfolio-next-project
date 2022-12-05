@@ -37,10 +37,10 @@
     @apply w-[95%] mx-auto lg:mx-0 lg:w-80 h-[86vh] lg:h-[82vh] flex flex-col justify-between items-center bg-slate-900 rounded overflow-hidden border border-slate-700 shadow-md divide-y divide-slate-500 z-10;
   }
   .hide-section {
-    @apply translate-y-4 opacity-10 pointer-events-none;
+    @apply translate-x-10 opacity-0 pointer-events-none ease-out;
   }
   .home-section {
-    @apply w-full lg:w-3/4 h-[90vh] lg:max-h-[82vh] overflow-auto flex flex-col items-start justify-start gap-4 px-4 py-2 bg-no-repeat bg-cover transition-all duration-500;
+    @apply w-full lg:w-3/4 h-[90vh] lg:max-h-[82vh] overflow-auto flex flex-col items-start justify-start gap-4 px-4 py-2 bg-no-repeat bg-cover transition-all duration-300;
   }
   .overlay-layer {
     @apply relative z-10 after:absolute after:content-[""] after:w-full after:min-h-full after:h-full after:inset-0 after:z-[0] after:bg-slate-800 after:bg-opacity-70;
