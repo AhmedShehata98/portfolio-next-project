@@ -26,19 +26,29 @@ const Home = ({ skills }: IHomeProps) => {
     }
   };
   useEffect(() => {
-    observer.current = new IntersectionObserver(
-      ObserverCallback,
-      observerOptions
-    );
-    const skillsSection = homeSectionRef.current
-      ?.children?.[3] as HTMLDivElement;
-    if (homeSectionRef.current !== undefined) {
-      observer.current?.observe(skillsSection);
+    if (
+      "ontouchstart" in document.documentElement &&
+      navigator.maxTouchPoints >= 1
+    ) {
+      if (window.matchMedia("(max-width:768px)").matches) {
+        setSkillsIsVisible(true);
+      }
+      setSkillsIsVisible(true);
+    } else {
+      observer.current = new IntersectionObserver(
+        ObserverCallback,
+        observerOptions
+      );
+      const skillsSection = homeSectionRef.current
+        ?.children?.[3] as HTMLDivElement;
+      if (homeSectionRef.current !== undefined) {
+        observer.current?.observe(skillsSection);
+      }
+      return () => {
+        observer.current?.unobserve(skillsSection);
+        observer.current?.disconnect();
+      };
     }
-    return () => {
-      observer.current?.unobserve(skillsSection);
-      observer.current?.disconnect();
-    };
   }, [homeSectionRef.current, observerOptions]);
 
   return (

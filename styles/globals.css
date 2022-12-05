@@ -1,7 +1,7 @@
 @tailwind base;
 @layer base {
   body {
-    @apply bg-slate-800;
+    @apply bg-slate-800 font-Roboto;
   }
 }
 @tailwind components;

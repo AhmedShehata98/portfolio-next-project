@@ -33,6 +33,14 @@ export default function App({ Component, pageProps }: AppProps) {
           rel="stylesheet"
           href="https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css"
         ></link>
+        <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+        <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+        <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+        <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+          rel="stylesheet"
+        ></link>
       </Head>
       <Layout>
         <Component {...pageProps} />

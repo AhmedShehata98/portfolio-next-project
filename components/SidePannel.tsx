@@ -63,17 +63,17 @@ const SidePannel = () => {
                 style={{ width: "100%" }}
               ></span>
             </div>
-            <b>100%</b>
+            <b>Native</b>
           </div>
           <div className="w-full flex items-center justify-start gap-2">
             <p className="w-1/4 capitalize">english :</p>
             <div className="w-3/5 h-3 flex items-center">
               <span
                 className="inline-block bg-sky-400 h-3 rounded-full shadow-md"
-                style={{ width: "35%" }}
+                style={{ width: "45%" }}
               ></span>
             </div>
-            <b>35%</b>
+            <b>Basics</b>
           </div>
         </div>
       </div>
