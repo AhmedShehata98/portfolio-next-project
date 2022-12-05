@@ -136,5 +136,8 @@
   .discripe {
     @apply px-4 py-1.5 w-full h-4/5 flex justify-start items-center text-white;
   }
+  .skills {
+    @apply w-full flex flex-col z-10;
+  }
 }
 @tailwind utilities;

@@ -1,3 +1,6 @@
+export interface IHomeProps {
+  skills: ISkillsList[];
+}
 export interface IProjectsList {
   id: string;
   title: string;
@@ -25,4 +28,15 @@ export interface INewsfeed {
   description: string;
   date: string;
   media: string;
+}
+
+export interface ISkillsList {
+  id: string;
+  image: string;
+  skillName: string;
+  skillLevel: number;
+}
+export interface ISkillsProps {
+  skills: ISkillsList[];
+  isVisiale: boolean;
 }
