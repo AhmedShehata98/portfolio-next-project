@@ -22,7 +22,7 @@
     @apply px-3 py-2 rounded-3xl hover:text-emerald-500 transition-colors;
   }
   .link-active {
-    @apply text-emerald-600;
+    @apply text-emerald-400 font-extrabold;
   }
   .toggler-navbar {
     @apply z-10 flex items-center justify-start rounded-full bg-slate-900 px-3 py-3 lg:hidden;
@@ -34,13 +34,13 @@
     @apply relative z-20 lg:max-h-screen overflow-hidden container mx-auto pt-20 lg:pt-24 flex items-start justify-between flex-col lg:flex-row gap-2;
   }
   .side-pannel {
-    @apply w-[95%] mx-auto lg:mx-0 lg:w-80 h-[86vh] lg:h-[82vh] flex flex-col justify-between items-center bg-slate-900 rounded overflow-hidden border border-slate-700 shadow-md divide-y divide-slate-500 z-10;
+    @apply w-[95%] mx-auto lg:mx-0 lg:w-80 h-[86vh] lg:h-[82vh] flex flex-col justify-between items-center bg-slate-900 rounded overflow-hidden border border-slate-600 shadow divide-y divide-slate-500 z-10;
   }
   .hide-section {
     @apply translate-x-10 opacity-0 pointer-events-none ease-out;
   }
   .home-section {
-    @apply w-full lg:w-3/4 h-[90vh] lg:max-h-[82vh] overflow-auto flex flex-col items-start justify-start gap-4 px-4 py-2 bg-no-repeat bg-cover transition-all duration-300;
+    @apply w-full lg:w-3/4 h-[90vh] lg:max-h-[82vh] overflow-auto flex flex-col items-start justify-start gap-4 px-4 py-2 bg-no-repeat bg-cover transition-all duration-300 rounded border border-slate-200;
   }
   .overlay-layer {
     @apply relative z-10 after:absolute after:content-[""] after:w-full after:min-h-full after:h-full after:inset-0 after:z-[0] after:bg-slate-800 after:bg-opacity-70;
@@ -51,7 +51,7 @@
     width: 0px;
   }
   .hero {
-    @apply relative z-20 isolate w-full min-h-[20rem] flex flex-col justify-center items-start bg-gray-700 rounded shadow-lg;
+    @apply relative z-20 isolate w-full min-h-[20rem] flex flex-col justify-center items-start bg-gray-700 rounded shadow-lg mt-2;
   }
   .hero-heading-wrapper {
     @apply lg:w-3/4 h-fit text-white shadow rounded overflow-hidden flex flex-col justify-center items-center lg:items-start px-5 lg:px-10 py-5 z-10;
@@ -63,7 +63,7 @@
     @apply flex items-center justify-center gap-2 py-2 px-3 bg-sky-500 border border-sky-500 rounded hover:bg-sky-700 text-sm font-semibold uppercase transition-colors duration-300 disabled:bg-zinc-400 disabled:border-slate-500;
   }
   .portfolio-section {
-    @apply relative z-10 flex flex-col justify-start items-start max-h-[90vh] lg:max-h-[82vh] h-[90vh] lg:h-[82vh] overflow-auto w-11/12 mx-auto lg:w-3/4 lg:px-2 transition-all duration-500;
+    @apply relative z-10 flex flex-col justify-start items-start max-h-[90vh] lg:max-h-[82vh] h-[90vh] lg:h-[82vh] overflow-auto w-11/12 mx-auto lg:w-3/4 lg:px-2 transition-all duration-500 rounded border border-slate-700;
   }
   .projects-wrapper {
     @apply min-w-full max-h-[90vh] lg:max-h-[82vh] flex flex-col overflow-y-auto mb-4;
@@ -91,7 +91,7 @@
     width: 0px;
   }
   .contact-section {
-    @apply z-10 flex flex-col justify-start items-start gap-3 max-h-[90vh] lg:max-h-[82vh] overflow-auto w-11/12 mx-auto lg:w-3/4 lg:px-2 transition-all duration-500;
+    @apply z-10 flex flex-col justify-start items-start gap-3 max-h-[90vh] lg:max-h-[82vh] overflow-auto w-11/12 mx-auto lg:w-3/4 lg:px-2 transition-all duration-500 rounded border border-slate-700;
   }
   .contact-section::-webkit-scrollbar {
     appearance: none;
@@ -108,7 +108,7 @@
     @apply flex w-full;
   }
   .news-section {
-    @apply z-10 flex flex-col justify-start items-start max-h-[90vh] lg:max-h-[82vh] overflow-auto w-11/12 mx-auto lg:w-3/4 lg:px-2 transition-all duration-500;
+    @apply z-10 flex flex-col justify-start items-start max-h-[90vh] lg:max-h-[82vh] overflow-auto w-11/12 mx-auto lg:w-3/4 lg:px-2 transition-all duration-500 rounded border border-slate-700;
   }
   .news-section ::-webkit-scrollbar {
     appearance: none;

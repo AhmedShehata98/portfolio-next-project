@@ -8,7 +8,7 @@ type navbarProps = {
 const Navbar = () => {
   const navbarRef = useRef<HTMLElement | null>(null);
 
-  const { route, isReady, events } = useRouter();
+  const { route, events } = useRouter();
 
   events?.on("routeChangeComplete", (ev) =>
     ev && ev !== "/"
@@ -64,8 +64,15 @@ const Navbar = () => {
   return (
     <header className="header-bar">
       <div className="container flex justify-between items-center mx-auto px-3 lg:py-0">
-        <Link href="/" className="bg-gray-900 px-4 rounded-full">
-          <img src="./logo.png" alt="logo" className="w-24 object-cover" />
+        <Link
+          href="/"
+          className="bg-emerald-600 px-4 w-28 shadow-inner rounded-full"
+        >
+          <img
+            src="./logo.png"
+            alt="logo"
+            className="max-w-full aspect-[2/1] object-cover"
+          />
         </Link>
         <div className="toggler-navbar">
           <button
@@ -112,7 +119,7 @@ const Navbar = () => {
             news
           </Link>
           <Link
-            className="px-8 py-2 rounded-3xl bg-emerald-500 text-black hover:bg-gray-500 hover:text-emerald-400"
+            className="grid place-items-center w-28 py-2 rounded-3xl bg-emerald-500 text-black hover:bg-gray-500 hover:text-emerald-400"
             href="https://www.upwork.com/freelancers/~01b20a553681d081b1"
             target="_blank"
             rel="noopener noreferrer"

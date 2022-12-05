@@ -33,7 +33,9 @@ const NewsFeed = ({ news }: newsFeedPorps) => {
         className="news-section hide-section"
         id="/news"
       >
-        <h3 className="text-white text-xl uppercase">My latest achievement</h3>
+        <h3 className="text-white text-xl uppercase mt-4 mb-6">
+          My latest achievement
+        </h3>
         <div className="w-full max-h-[82vh] h-[82vh] overflow-x-hidden overflow-y-auto px-8 my-5">
           <ul className="feeds-list">
             {news &&

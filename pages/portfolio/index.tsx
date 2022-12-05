@@ -106,7 +106,7 @@ const Prortfolio = ({ projects }: PortfolioProps) => {
         id="/portfolio"
       >
         <div className="projects-wrapper">
-          <h3 className="text-2xl uppercase z-10 text-white mt-2 mb-6">
+          <h3 className="text-2xl uppercase z-10 text-white mt-4 mb-6 ">
             portfolio
           </h3>
           <ul

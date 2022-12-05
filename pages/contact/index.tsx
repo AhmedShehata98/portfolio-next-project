@@ -40,7 +40,9 @@ const Contact = () => {
       </Head>
       <section ref={contactSectionRef} className="contact-section hide-section">
         <div className="contact-boxs">
-          <h3 className="text-white text-xl uppercase">contact informations</h3>
+          <h3 className="text-white text-xl uppercase mt-4">
+            contact informations
+          </h3>
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 w-full">
             <ContactBox
               key={nanoid(6)}

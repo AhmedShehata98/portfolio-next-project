@@ -11,11 +11,11 @@ const SidePannel = () => {
       <div
         className={`w-full h-56 bg-gradient-to-t from-slate-700 to-slate-700 flex justify-center items-center flex-col gap-3 500`}
       >
-        <figure className="relative w-28 lg:w-24 ">
+        <figure className="relative w-28 lg:w-24">
           <Image
             src={profilePicture.src}
             alt="profile-img"
-            className="max-w-full aspect-square rounded-full"
+            className="max-w-full aspect-square rounded-full border-4 border-slate-100"
             width={100}
             height={100}
           />
