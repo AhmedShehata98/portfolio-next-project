@@ -1,14 +1,27 @@
 import { nanoid } from "nanoid";
 import Head from "next/head";
 import React, { useEffect, useRef, useState } from "react";
+import Alert from "../../components/Alert";
 import ContactBox from "../../components/ContactBox";
 import CopyRights from "../../components/CopyRights";
 import { IContactFormData } from "../../types/types";
 
 const Contact = () => {
-  const [formData, setFormData] = useState<Partial<IContactFormData>>();
+  const [formData, setFormData] = useState<Partial<IContactFormData>>({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [messageIsSent, setMessageIsSent] = useState<{
+    status: boolean;
+    message: string;
+  }>({
+    status: false,
+    message: "",
+  });
   const [isValidForm, setIsValidForm] = useState(false);
   const contactSectionRef = useRef<HTMLElement | null>(null);
+  const messageTimeoutRef = useRef<number | undefined>(0);
 
   const handleChangeFormData = (ev: React.ChangeEvent) => {
     const input = ev.target as HTMLInputElement;
@@ -19,6 +32,31 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, [inputName]: inputValue }));
     if (form?.checkValidity()) {
       setIsValidForm(true);
+    }
+  };
+  const handleSendMessage = async (ev: React.MouseEvent<HTMLButtonElement>) => {
+    const form = ev.target as HTMLButtonElement;
+
+    if (form.checkValidity()) {
+      try {
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/jsom" },
+          body: JSON.stringify(formData),
+        });
+        const data = await res.json();
+        if (!data?.pending && data?.isSent) {
+          setMessageIsSent({
+            status: true,
+            message: data.message,
+          });
+        }
+      } catch (error: any) {
+        setMessageIsSent({
+          status: true,
+          message: error?.message,
+        });
+      }
     }
   };
   useEffect(() => {
@@ -33,6 +71,26 @@ const Contact = () => {
     };
   }, [contactSectionRef.current?.classList?.contains("hide-section")]);
 
+  useEffect(() => {
+    messageTimeoutRef.current = +setTimeout(() => {
+      setMessageIsSent({
+        status: false,
+        message: "",
+      });
+    }, 7000);
+  }, [messageIsSent.status, messageIsSent.status]);
+  useEffect(() => {
+    if (!messageIsSent.status) {
+      clearTimeout(messageTimeoutRef.current);
+    } else {
+      setFormData({
+        email: "",
+        message: "",
+        name: "",
+      });
+      setIsValidForm(false);
+    }
+  }, [messageIsSent.status]);
   return (
     <>
       <Head>
@@ -135,8 +193,11 @@ const Contact = () => {
             </span>
             <button
               className="btn w-full lg:w-1/4 text-slate-100 mt-4"
-              type="submit"
+              type="button"
               disabled={!isValidForm}
+              onClick={(ev: React.MouseEvent<HTMLButtonElement>) =>
+                handleSendMessage(ev)
+              }
             >
               send message
             </button>
@@ -144,6 +205,11 @@ const Contact = () => {
         </div>
         <CopyRights />
       </section>
+      <Alert
+        message={messageIsSent.message}
+        severity={messageIsSent.status ? "success" : "error"}
+        visiabilty={messageIsSent.status}
+      />
     </>
   );
 };

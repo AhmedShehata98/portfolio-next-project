@@ -11,7 +11,7 @@ const SidePannel = () => {
       <div
         className={`w-full h-56 bg-gradient-to-t from-slate-700 to-slate-700 flex justify-center items-center flex-col gap-3 500`}
       >
-        <figure className="relative w-28 lg:w-24">
+        <figure className="relative w-28 lg:w-28">
           <Image
             src={profilePicture.src}
             alt="profile-img"
@@ -31,23 +31,32 @@ const SidePannel = () => {
           ></span>
         </figure>
         <span className="grid place-content-center place-items-center text-white">
-          <p className="mb-3 font-semibold">Ahmed Shehata</p>
-          <p className="font-mono text-sm">Front-end Web Development</p>
-          <p className="text-emerald-400">React.JS web developer</p>
+          <p className="mb-1 font-semibold">Ahmed Shehata</p>
+          <p className="text-sm text-emerald-400 capitalize">
+            Front-end Web Development - (REACT.JS)
+          </p>
         </span>
       </div>
-      <div className="w-full flex flex-col gap-2 px-6 py-5 bg-slate-900 text-white uppercase !border-0">
-        <span className="flex justify-between items-center">
-          <b>country :</b>
-          <img src={egyFlag.src} alt="country-flag" className="w-8" />
+      <div className="w-full flex flex-col gap-2 px-6 py-3 bg-slate-900 text-white uppercase !border-0">
+        <b>information</b>
+        <span className="flex justify-between items-end">
+          <small>country :</small>
+          <span className="flex justify-center gap-2 ">
+            EGY
+            <img
+              src={egyFlag.src}
+              alt="country-flag"
+              className="object-cover w-10 aspect-video"
+            />
+          </span>
         </span>
         <span className="flex justify-between items-center">
-          <b>city :</b>
+          <small>city :</small>
           <small>alexandria</small>
         </span>
         <span className="flex justify-between items-center">
-          <b>age :</b>
-          <small>24</small>
+          <small>age :</small>
+          <small>{new Date().getFullYear() - 1998}</small>
         </span>
       </div>
       <div className="w-full flex flex-col px-6 py-5 items-center justify-between text-white">
@@ -56,24 +65,24 @@ const SidePannel = () => {
         </h5>
         <div className="w-full flex flex-col justify-between items-start">
           <div className="w-full flex items-center justify-start gap-2">
-            <p className="w-1/4 capitalize">arabic :</p>
+            <small className="w-1/4 capitalize">arabic :</small>
             <div className="w-3/5 h-3 flex items-center">
               <span
-                className="inline-block bg-sky-400 h-3 rounded-full shadow-md"
+                className="inline-block bg-cyan-500 h-3 rounded-full shadow-md"
                 style={{ width: "100%" }}
               ></span>
             </div>
-            <b>Native</b>
+            <small>Native</small>
           </div>
           <div className="w-full flex items-center justify-start gap-2">
-            <p className="w-1/4 capitalize">english :</p>
+            <small className="w-1/4 capitalize">english :</small>
             <div className="w-3/5 h-3 flex items-center">
               <span
-                className="inline-block bg-sky-400 h-3 rounded-full shadow-md"
+                className="inline-block bg-cyan-500 h-3 rounded-full shadow-md"
                 style={{ width: "45%" }}
               ></span>
             </div>
-            <b>Basics</b>
+            <small>Basics</small>
           </div>
         </div>
       </div>

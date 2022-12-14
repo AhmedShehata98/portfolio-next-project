@@ -8,7 +8,7 @@ function Skills({ skills, isVisiale }: ISkillsProps) {
       <h4 className="mt-2 mb-4 uppercase text-white text-lg font-bold">
         skills
       </h4>
-      <ul className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+      <ul className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 ">
         {skills &&
           Array.isArray(skills) &&
           skills.map((skill) => (
@@ -25,7 +25,7 @@ function Skills({ skills, isVisiale }: ISkillsProps) {
                 />
               </figure>
               <p className="w-fit text-white uppercase">{skill.skillName}</p>
-              <span className="w-full h-2 rounded-md flex items-center justify-start bg-slate-900">
+              <span className="w-full h-2 rounded-md flex items-center justify-start bg-slate-900 overflow-hidden">
                 <span
                   style={
                     isVisiale
@@ -36,7 +36,7 @@ function Skills({ skills, isVisiale }: ISkillsProps) {
                           width: `0%`,
                         }
                   }
-                  className={`inline-block h-2 bg-emerald-500 transition-all duration-700 ease-out`}
+                  className={`inline-block h-2 bg-emerald-500 transition-all duration-500 ease-out rounded-full`}
                 ></span>
               </span>
               <b className="w-fit text-white uppercase">

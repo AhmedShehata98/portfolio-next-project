@@ -2,9 +2,6 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-type navbarProps = {
-  currentPage: string;
-};
 const Navbar = () => {
   const navbarRef = useRef<HTMLElement | null>(null);
 
@@ -62,11 +59,11 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="header-bar">
-      <div className="container flex justify-between items-center mx-auto px-3 lg:py-0">
+    <header className="header-bar ">
+      <div className="container flex justify-between items-center mx-2 lg:mx-auto lg:py-0 bg-slate-700 pl-3 rounded ">
         <Link
           href="/"
-          className="bg-emerald-600 px-4 w-28 shadow-inner rounded-full"
+          className="bg-emerald-600 px-4 w-28 shadow-inner rounded"
         >
           <img
             src="./logo.png"
@@ -119,7 +116,7 @@ const Navbar = () => {
             news
           </Link>
           <Link
-            className="grid place-items-center w-28 py-2 rounded-3xl bg-emerald-500 text-black hover:bg-gray-500 hover:text-emerald-400"
+            className="grid place-items-center w-28 py-2 rounded bg-emerald-500 text-black transition-colors duration-300 hover:bg-gray-500 hover:text-emerald-400"
             href="https://www.upwork.com/freelancers/~01b20a553681d081b1"
             target="_blank"
             rel="noopener noreferrer"
