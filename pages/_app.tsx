@@ -5,6 +5,9 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import LoaderModule from "../components/LoaderModule";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+import SidePannel from "../components/SidePannel";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -42,8 +45,13 @@ export default function App({ Component, pageProps }: AppProps) {
           rel="stylesheet"
         ></link>
       </Head>
+      <Navbar />
       <Layout>
-        <Component {...pageProps} />
+        <section className="flex flex-col lg:flex-row gap-3 container mx-auto">
+          {router?.pathname !== "/404" && <SidePannel />}
+          <Component {...pageProps} />
+        </section>
+        <Footer />
       </Layout>
       {isLoading && <LoaderModule />}
     </>

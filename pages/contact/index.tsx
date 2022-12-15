@@ -3,7 +3,6 @@ import Head from "next/head";
 import React, { useEffect, useRef, useState } from "react";
 import Alert from "../../components/Alert";
 import ContactBox from "../../components/ContactBox";
-import CopyRights from "../../components/CopyRights";
 import { IContactFormData } from "../../types/types";
 
 const Contact = () => {
@@ -96,7 +95,7 @@ const Contact = () => {
       <Head>
         <title>Contact</title>
       </Head>
-      <section ref={contactSectionRef} className="contact-section hide-section">
+      <section ref={contactSectionRef} className="page hide-section">
         <div className="contact-boxs">
           <h3 className="text-white text-xl uppercase mt-4">
             contact informations
@@ -203,7 +202,6 @@ const Contact = () => {
             </button>
           </form>
         </div>
-        <CopyRights />
       </section>
       <Alert
         message={messageIsSent.message}

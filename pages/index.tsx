@@ -4,11 +4,9 @@ import Services from "../components/Services";
 import { useEffect, useRef, useState } from "react";
 import Skills from "../components/Skills";
 import { IHomeProps, ISkillsList } from "../types/types";
-import { useRouter } from "next/router";
 
 const Home = ({ skills }: IHomeProps) => {
-  const router = useRouter();
-  const homeSectionRef = useRef<HTMLElement | null>(null);
+  const homeSectionRef = useRef<HTMLDivElement | null>(null);
   const observer = useRef<IntersectionObserver | null>(null);
   const [skillsIsVisible, setSkillsIsVisible] = useState(false);
   const observerOptions = {
@@ -56,16 +54,11 @@ const Home = ({ skills }: IHomeProps) => {
       <Head>
         <title>Ahmed Shehata Portfolio | Home</title>
       </Head>
-      <section
-        ref={homeSectionRef}
-        id="/"
-        className="home-section"
-        style={{ backgroundImage: `url(/background.png)` }}
-      >
+      <div ref={homeSectionRef} id="/" className="page">
         <Hero />
         <Services />
         <Skills skills={skills} isVisiale={skillsIsVisible} />
-      </section>
+      </div>
     </>
   );
 };

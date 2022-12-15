@@ -7,7 +7,7 @@
 @tailwind components;
 @layer components {
   .header-bar {
-    @apply fixed top-0 isolate z-20 left-0 w-full flex justify-between items-center py-2  lg:my-4 bg-slate-800 text-white;
+    @apply fixed top-0 isolate z-20 left-0 w-full flex justify-between items-center py-2  lg:my-2 bg-slate-800 text-white;
   }
   .navbar {
     @apply lg:relative flex lg:items-center lg:justify-around lg:w-2/5 lg:text-sm uppercase font-semibold absolute right-0 top-0 w-9/12 border lg:border-0 lg:h-14 h-screen bg-slate-700 lg:bg-slate-700 flex-col lg:flex-row justify-start items-start pt-14 lg:pt-0 px-6 lg:px-0 translate-x-full lg:translate-x-0 opacity-0 lg:opacity-100 pointer-events-none lg:pointer-events-auto gap-1 text-lg transition-all duration-300 pr-2 rounded;
@@ -31,30 +31,30 @@
     @apply absolute top-0 right-0  py-4 px-9 mb-1 rounded-none rounded-tl rounded-tr m-0 w-3/4 border border-slate-500;
   }
   .component-wrapper {
-    @apply relative z-20 lg:max-h-screen overflow-hidden container mx-auto pt-20 lg:pt-24 flex items-start justify-between flex-col lg:flex-row gap-2;
+    @apply relative w-full min-h-screen lg:min-h-max lg:h-[85vh] lg:max-h-screen flex flex-col gap-3 mt-[5.5rem] overflow-hidden;
   }
   .side-pannel {
-    @apply w-[95%] mx-auto lg:mx-0 lg:w-80 h-[86vh] lg:h-[82vh] flex flex-col justify-between items-center bg-slate-900 rounded overflow-hidden border border-slate-600 shadow divide-y divide-slate-500 z-10;
+    @apply w-[95%] mx-auto lg:mx-0 lg:w-80 min-h-[75vh] lg:h-[74vh] flex flex-col justify-between items-center bg-slate-900 rounded overflow-hidden border border-slate-600 shadow divide-y divide-slate-500 z-10;
   }
   .hide-section {
     @apply translate-x-10 opacity-0 pointer-events-none ease-out;
   }
-  .home-section {
-    @apply w-full lg:w-3/4 h-[90vh] lg:max-h-[82vh] overflow-auto flex flex-col items-start justify-start gap-4 px-4 py-2 bg-no-repeat bg-cover transition-all duration-300 rounded border border-slate-200;
+  .page {
+    @apply w-full lg:w-[75%] lg:h-[74vh] lg:max-h-[74vh] flex flex-col items-center justify-start px-3 pb-3 overflow-auto transition-all duration-300 ease-out;
   }
   .overlay-layer {
-    @apply relative z-10 after:absolute after:content-[""] after:w-full after:min-h-full after:h-full after:inset-0 after:z-[0] after:bg-slate-800 after:bg-opacity-70;
+    @apply relative after:z-[-1] after:absolute after:content-[""] after:w-full after:min-h-full after:h-full after:inset-0 after:bg-slate-800 after:bg-opacity-70;
   }
-  .home-section::-webkit-scrollbar {
+  .page::-webkit-scrollbar {
     appearance: none;
     --webkit-appearance: none;
     width: 0px;
   }
   .hero {
-    @apply relative z-20 isolate w-full min-h-[20rem] flex flex-col justify-center items-start bg-gray-700 rounded shadow-lg mt-2;
+    @apply relative w-full h-full flex items-center justify-center lg:justify-start bg-no-repeat bg-cover rounded;
   }
   .hero-heading-wrapper {
-    @apply lg:w-3/4 h-fit text-white shadow rounded overflow-hidden flex flex-col justify-center items-center lg:items-start px-5 lg:px-10 py-5 z-10;
+    @apply relative z-10 flex items-center lg:items-start justify-center flex-col lg:pl-7 py-14 lg:py-16;
   }
   .btn-outline {
     @apply flex items-center justify-center gap-2 py-1.5 px-3 text-sky-400 text-sm font-bold rounded uppercase border-2 border-sky-500 hover:text-sky-200 hover:shadow-md hover:shadow-sky-900 transition-colors duration-300 disabled:bg-zinc-400 disabled:border-slate-500;
@@ -77,7 +77,7 @@
     @apply relative grid h-64 overflow-hidden;
   }
   .poject-details-preview {
-    @apply absolute z-30 top-0 left-0 w-full h-screen bg-slate-700 bg-opacity-70;
+    @apply fixed z-30 top-0 left-0 w-full h-screen bg-slate-700 bg-opacity-70;
   }
   .tile-details {
     @apply absolute bottom-0 left-0 w-full px-2 py-4 flex flex-col gap-2 items-start bg-slate-600 transition-all duration-500 translate-y-full opacity-0 border-t-4 border-sky-500;

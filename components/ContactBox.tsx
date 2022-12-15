@@ -9,7 +9,7 @@ type ContactBoxProps = {
 };
 function ContactBox({ contacts }: ContactBoxProps) {
   return (
-    <li className="flex flex-col w-full lg:w-auto gap-2 px-3 py-6 uppercase bg-slate-600 rounded shadow-md">
+    <li className="flex flex-col w-full lg:w-auto gap-2 px-3 py-6 bg-slate-600 rounded shadow-md">
       {contacts.map((contact) => (
         <span
           className="flex items-center justify-between gap-3"

@@ -7,34 +7,38 @@ const Hero = () => {
       <div
         className="hero"
         style={{
-          backgroundImage: `url(/profile-cover-1.webp)`,
-          backgroundSize: "cover",
-          backgroundPosition: "bottom",
-          backgroundRepeat: "no-repeat",
+          backgroundImage: `url("/profile-cover-1.webp")`,
         }}
       >
-        <span className="inline-block absolute inset-0 bg-gradient-to-tr from-slate-900 to-emerald-700 opacity-50"></span>
+        <span className="absolute inset-0 bg-gradient-to-tr from-gray-900 to-sky-700 opacity-70"></span>
         <div className="hero-heading-wrapper">
-          <h2 className="text-xl lg:text-4xl font-bold text-center lg:text-start uppercase mb-3">
-            HELLO, I AM A FRONT-END WEB DEVELOPER
-          </h2>
-          <code className="text-sm mb-12">
+          <h3 className="text-xl lg:text-3xl font-bold uppercase text-white max-w-sm lg:max-w-xl text-center lg:text-start">
+            Hello customers, i am a front-end web developer
+          </h3>
+          <p className="text-zinc-300">
             Experience with development by React.JS Library
+          </p>
+          <code className="text-sky-400 mb-8">
+            React.JS | Redux.JS | Neext.JS
           </code>
-          <div className="w-full flex items-center justify-center lg:justify-start gap-3 mb-3">
+          <span className="w-full lg:w-10/12 flex items-center justify-center lg:justify-start gap-3">
             <Link
               href="https://www.upwork.com/freelancers/~01b20a553681d081b1"
-              className="btn px-3 lg:px-10"
+              target={"_blank"}
+              referrerPolicy="no-referrer"
+              className="btn w-[35%]"
             >
               hire me
             </Link>
             <Link
               href="https://drive.google.com/file/d/1dc4UP7cgg7GHZaVr83Li9GBF8t5Bv2SK/view"
+              target={"_blank"}
+              referrerPolicy="no-referrer"
               className="btn-outline"
             >
-              download resume
+              Resume
             </Link>
-          </div>
+          </span>
         </div>
       </div>
       <ul className="flex justify-between w-full flex-col lg:flex-row px-2 mt-3 z-10">

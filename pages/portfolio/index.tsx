@@ -1,7 +1,8 @@
 import { nanoid } from "nanoid";
 import Head from "next/head";
 import React, { useEffect, useRef, useState } from "react";
-import CopyRights from "../../components/CopyRights";
+import CopyRights from "../../components/Footer";
+import ProjectDitails from "../../components/ProjectDitails";
 
 import ProjectTile from "../../components/ProjectTile";
 import { getPortfolioDocs } from "../../services/firestore";
@@ -11,7 +12,7 @@ const Prortfolio = ({ projects }: PortfolioProps) => {
   const [showProjectDetails, setShowProjectDetails] = useState<boolean>(false);
   const porjectsListRef = useRef<HTMLUListElement | null>(null);
   const currentProjectIndexRef = useRef<number>(-1);
-  const portfolioSectionRef = useRef<HTMLElement>(null);
+  const portfolioSectionRef = useRef<HTMLDivElement>(null);
 
   const handlePreviewImage = (currentProjectIndex: number) => {
     setShowProjectDetails(true);
@@ -100,9 +101,9 @@ const Prortfolio = ({ projects }: PortfolioProps) => {
       <Head>
         <title>Portfolio</title>
       </Head>
-      <section
+      <div
         ref={portfolioSectionRef}
-        className="portfolio-section hide-section"
+        className="page hide-section"
         id="/portfolio"
       >
         <div className="projects-wrapper">
@@ -134,16 +135,14 @@ const Prortfolio = ({ projects }: PortfolioProps) => {
               ))}
           </ul>
         </div>
-
-        <CopyRights />
-      </section>
-      {/* {showProjectDetails && (
+      </div>
+      {showProjectDetails && (
         <ProjectDitails
           projects={projects}
           handleClose={() => handleClose()}
           currentProjectIndex={currentProjectIndexRef.current}
         />
-      )} */}
+      )}
     </>
   );
 };

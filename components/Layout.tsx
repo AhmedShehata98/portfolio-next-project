@@ -1,22 +1,10 @@
-import { useRouter } from "next/router";
-import Navbar from "./Navbar";
-import SidePannel from "./SidePannel";
+import { ReactNode } from "react";
 
 type LayoutProps = {
-  children: JSX.Element;
+  children: ReactNode;
 };
 const Layout = ({ children }: LayoutProps) => {
-  const { pathname } = useRouter();
-
-  return (
-    <>
-      <Navbar />
-      <main className="component-wrapper overlay-layer">
-        {pathname !== "/404" && <SidePannel />}
-        {children}
-      </main>
-    </>
-  );
+  return <main className="component-wrapper">{children}</main>;
 };
 
 export default Layout;
