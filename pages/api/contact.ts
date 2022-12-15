@@ -57,6 +57,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
           message: `error , ${err.message}`,
         });
       });
+  } else if (req.method === "GET") {
+    return res.status(200).json({
+      pending: false,
+      message: "is working now",
+    });
   }
 };
 export default handler;
