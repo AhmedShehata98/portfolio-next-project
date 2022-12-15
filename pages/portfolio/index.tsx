@@ -151,7 +151,6 @@ export default Prortfolio;
 
 export const getStaticProps = async () => {
   const projects = await getPortfolioDocs();
-
   return {
     props: {
       projects,
