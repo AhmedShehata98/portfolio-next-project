@@ -5,6 +5,7 @@ import Head from "next/head";
 import React, { useEffect, useRef } from "react";
 import CopyRights from "../../components/CopyRights";
 import FeedBox from "../../components/FeedBox";
+import { getNewsfeedDocs } from "../../services/firestore";
 import { INewsfeed, newsFeedPorps } from "../../types/types";
 
 const NewsFeed = ({ news }: newsFeedPorps) => {
@@ -59,10 +60,7 @@ const NewsFeed = ({ news }: newsFeedPorps) => {
 export default NewsFeed;
 
 export const getStaticProps = async () => {
-  const res = await fetch(
-    "https://portfolio-next-api-alpha.vercel.app/api/newsfeed"
-  );
-  const news = await res.json();
+  const news = await getNewsfeedDocs();
   return {
     props: {
       news,

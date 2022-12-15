@@ -1,7 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import sgMail from "@sendgrid/mail";
+import { SENDGRID_APIKEY } from "../../services/sendgrid";
 //
-sgMail.setApiKey(process.env.SENDGRID_APIKEY as string);
+sgMail.setApiKey(SENDGRID_APIKEY);
 interface IReqestBody {
   name: string;
   email: string;
